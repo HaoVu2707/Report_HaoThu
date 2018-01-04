@@ -1,6 +1,4 @@
-﻿# Report_HaoThu
-This is the report  our group
-# Report_GroupHao_Thu
+# Report_HaoThu
 This is the report  our group
 <<<<<<< HEAD
 # 1.Cách sử dụng .gitignore
