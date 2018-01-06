@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# Report_HaoThu
+﻿# Report_HaoThu
 This is the report  our group
 =======
 ﻿# Report_HaoThu
@@ -37,7 +36,6 @@ Bạn có thể vào https://github.com/github/gitignore để tham khảo một
  -Tiếp theo chọn Add , đặt tên cho remote và lấy địa chỉ Responsitory mới trên GitHub về bằng cách copy link rồi chọn Ok <br>
  ![](https://i.imgur.com/XNRkIK8.jpg) 
 
->>>>>>> 9d9f05b9ed2295a4e868209f1986efb62958af98
  # 1. Sơ đồ tổng quan về hệ thống GIT
  ![](https://i.imgur.com/aTq5pm7.png)
  # 2. Cách tạo một Repository
@@ -109,7 +107,7 @@ Nhu cầu khi chúng ta đã phát triển xong  1 tính năng ví dụ bar và 
 Sau đó màn hình sẽ chuyển hướng sang khởi tạo yều cầu pull request này :
 ![](https://i.imgur.com/XCBYgZL.png)
 Điền thông tin cần thiết vào và bấm Create pull request lúc này, người chịu trách nhiệm cho dự án sẽ nhận được yêu cầu của bạn, người ta sẽ kiểm tra và cho phép ghép code vào. Lúc này, tính năng bar sẽ thuộc phần chính của dự án.
-<<<<<<< HEAD
+
 # 5. Cách sử dụng gitlab
 - Tạo Repository:
     - Bước 1: Trước tiên bạn cần đăng nhập vào Gitlab, sau đó nhấn dấu chọn Project , chọn create a project.
@@ -157,5 +155,3 @@ Sau đó màn hình sẽ chuyển hướng sang khởi tạo yều cầu pull re
        |Thêm deploy key vào dự án | | | | * |* <br>
        | Cấu hình dự án| | | | * |* <br>
 
-=======
->>>>>>> 9d9f05b9ed2295a4e868209f1986efb62958af98
