@@ -57,3 +57,43 @@ Với 3 mức: Read Access, Write Access, Admin Access Github cho phép chúng t
 -Sau đó hệ thống sẽ yêu cầu bạn nhập password để xác thực, nếu thành công, một email xác nhận sẽ được gửi đến người được mời và người này sẽ xác nhận có tham gia vào tổ chức hay không.
 
 -Để tạo một repo cho tổ chức, ta chỉ cần click vào tổ chức đó, sau đó chọn Create new Repostory. Các hành động clone, add, commit,... làm như bình thường.
+# 6. Sơ lược về phân nhánh trong git :
+**CÁC NHÁNH CHÍNH**<br>
+-Repo trung tâm giữ hai branch chính với vòng đời vô tận:<br>
+master<br>
+develop<br>
+Song song với master branch, một branch khác tồn tại gọi là develop.<br>
+Chúng tôi sẽ coi origin/develop như một branch chính mà source code của HEAD luôn phản ánh trạng thái của những update mới nhất ở bản release tiếp theo. Đây là nơi những thay đổi được update thường xuyên.Khi source code trong develop branch đạt đến một điểm ổn định nó sẽ được release, sau đó tất cả các thay đổi đó cần phải được merge vào master branch.Sau mỗi lần thay đổi được merge vào master branch, nó sẽ được coi là sản phẩm mới được phát hành bởi sự xác định trước. <br>
+
+**CÁC NHÁNH HỖ TRỢ**<br>
+Tiếp theo 2 nhánh chính là master và develop, mô hình phát triển sử dụng rất nhiều các nhánh hỗ trợ để hỗ trợ việc phát triển song song giữa các thành viên trong team, dễ dàng theo dõi các tính năng, chuẩn bị cho phiên bản sắp phát hành và để hỗ trợ việc fix bug nhanh chóng. Không giống như các branch chính, các branch này luôn có vòng đời hạn chế, vì thế chúng sẽ được loại bỏ dần dần.
+Các kiểu branch khác nhau:<br>
+Feature branches<br>
+Release branches<br>
+Hotfix branches<br>
+Mỗi branch có một mục đích riêng và bị ràng buộc với các quy tắc nghiêm ngặt như ở branch gốc của nó và ở các branch là mục tiêu thực hiện merge của chúng.<br>
+
+*Nhánh feature* <br>
+Có thể phân nhánh từ: develop<br>
+Phải merge trở lại vào: develop<br>
+Quy ước đặt tên branch: không được trùng tên với các định danh sau master, develop, release- hay hotfix-<br>
+Nhánh feature (đôi khi được gọi là các nhánh topic) được sử dụng để phát triển các tính năng mới cho sản phẩm tiếp theo hoặc một bản phát hành trong tương lai. Khi bắt đầu phát triển một tính năng, đôi khi bạn sẽ không thể xác định được trước việc nó có nằm ở bản release tiếp theo hay không. Về cơ bản, một feature branch cứ tồn tại miễn là tính năng đó vẫn được phát triển, nhưng sẽ được merge trở lại vào develop (để chắc chắn thêm các tính năng mới cho bản phát hành kế tiếp) hoặc bỏ đi (trong trường hợp thất bại).<br>
+Khi bắt đầu làm việc trên một tính năng mới, bạn hãy phân nhánh từ nhánh develop.<br>
+
+*Nhánh Release*<br>
+Có thể phân nhánh từ: develop<br>
+Phải merge lại vào: develop<br>
+Quy ước đặt tên branch:release -<br>
+Nhánh release hỗ trợ việc chuẩn bị release một sản phẩm mới hay một version mới. Bạn cần phải tỉ mỉ từng chút một để hoàn thành sản phẩm một cách tốt nhất. Hơn nữa, nó cho phép sửa chữa các lỗi nhỏ và chuẩn bị meta-data để release (version, ngày tháng xây dựng,…). Bằng cách thực hiện tất cả các công việc này trên nhánh release, nhánh develop được giải phóng để nhận các tính năng cho sản phẩm tiếp theo.<br>
+Thời điểm quan trọng để phân nhánh một release branch mới từ develop là khi develop (gần như) đã bao gồm các tính năng mong muốn ở bản release tới. Ít nhất tất cả các tính năng được định hướng cho việc phát hành sản phẩm-chuẩn bị được xây dựng phải được merge vào develop tại thời điểm này. Tất cả các tính năng được nhắm đến ở các phiên bản trong tương lai có thể không cần đến – chúng phải đợi sau khi release branch được phân nhánh.<br>
+Release branch được tạo ra từ develop branch<br>
+Khi release branch đã sẵn sàng để trở thành một phiên bản thực sự, chúng ta cần phải làm một số việc sau. Đầu tiên, nhánh release sẽ được merge vào nhánh master. Tiếp theo, commit trên master phải được đánh tagged để lưu lại và tham chiếu với các phiên bản cũ. Cuối cùng, những thay đổi được thực hiện trên nhánh release cần được merge trở lại vào nhánh develop, do đó phiên bản tiếp theo cũng chứa các lỗi được fix.<br>
+
+*Nhánh Hotfix*<br>
+Có thể phân nhánh từ: master<br>
+Phải merge trở lại vào: Develop và master<br>
+Quy ước đặt tên branch: **hotfix -***<br>
+Nhánh hotfix rất giống nhánh release ở chỗ chúng cùng có nghĩa là chuẩn bị cho một bản update mới sắp release, mặc dù nó không nằm trong kế hoạch. Chúng phát sinh từ sự cần thiết của một hành động tức khắc khi có một bug không mong muốn trong một phiên bản sản phẩm. Khi một bug nghiêm trọng trong một phiên bản sản phẩm xảy ra, nó cần phải được giải quyết ngay lập tức. Một nhánh hotfix có thể được phân nhánh từ các tag tương ứng trên nhánh master.<br>
+Bản chất là công việc của các thành viên trong team (trên nhánh develop) vẫn có thể tiếp tục, trong khi một số người khác thì chuẩn bị việc fix bug.<br>
+Nhánh hotfix được tạo ra từ nhánh master.<br>
+Khi hoàn thành, bugfix cần được merge lại vào nhánh master, đồng thời cũng cần merge vào nhánh develop, để fix khi bugfix có thể xuất hiện trong phiên bản tiếp theo. Nó hoàn toàn tương tự như cách thực hiện nhánh release.<br>
