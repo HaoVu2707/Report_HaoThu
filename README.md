@@ -1,8 +1,8 @@
 # Report_HaoThu
 This is the report  our group
- # I. Sơ đồ tổng quan về hệ thống GIT
+ # 1. Sơ đồ tổng quan về hệ thống GIT
  ![](https://i.imgur.com/aTq5pm7.png)
- # II. Cách tạo một Repository
+ # 2. Cách tạo một Repository
   ## A. cách tạo Repository
  Bước 1: Trước tiên bạn cần đăng nhập vào Github, sau đó nhấn dấu + trong menu , chọn New repository.
  ![](https://thachpham.com/wp-content/uploads/2015/04/github-create-repository.png)
@@ -44,7 +44,7 @@ This is the report  our group
               | Hàng 3 | 3 x 1 | 3 x 2 | 3 x 3 | 3 x 4 |
               | Hàng 4 | 4 x 1 | 4 x 2 | 4 x 3 | 4 x 4 |
  
-# III.Các lệnh cơ bản của GIT
+# 3.Các lệnh cơ bản của GIT
  1. Khởi tạo Git trong một repository , vùng lưu trữ data có tên file .git , dưới dạng ẩn file.
     cú pháp : git init
     - Thêm các file vào vùng theo dõi :
@@ -62,7 +62,7 @@ This is the report  our group
  6. Commit : git commit -m "nội dung commit"
  7. Để đổi tên commit messege, bạn sử dụng amend
   Cú pháp: git commit --amend "Nội dung commit mới" <br>
-# VI. Cách tạo merge request trên github
+# 4. Cách tạo merge request trên github
 Nhu cầu khi chúng ta đã phát triển xong  1 tính năng ví dụ bar và muốn ghép nó vào với master, lúc này ta sẽ push code mình lên bar branch trên server, sau đó thực hiện yêu cầu được ghép code vào nhánh chính: yêu cầu này chính là pull request.
 1. push code nhánh bar lên server :
   cú pháp : git push origin <tên nhánh (ví dụ : bar)>
@@ -71,4 +71,50 @@ Nhu cầu khi chúng ta đã phát triển xong  1 tính năng ví dụ bar và 
 Sau đó màn hình sẽ chuyển hướng sang khởi tạo yều cầu pull request này :
 ![](https://i.imgur.com/XCBYgZL.png)
 Điền thông tin cần thiết vào và bấm Create pull request lúc này, người chịu trách nhiệm cho dự án sẽ nhận được yêu cầu của bạn, người ta sẽ kiểm tra và cho phép ghép code vào. Lúc này, tính năng bar sẽ thuộc phần chính của dự án.
-    
+# 5. Cách sử dụng gitlab
+- Tạo Repository:
+    - Bước 1: Trước tiên bạn cần đăng nhập vào Gitlab, sau đó nhấn dấu chọn Project , chọn create a project.
+        ![](https://i.imgur.com/rFLed4n.png)
+    - Bước 2: Đặt tên repository , chọn chế độ public (công khai), private (riêng tư), hay internal (cho phép những user xác định) . 
+        ![](https://i.imgur.com/ImwXhtq.png) <br>
+- Tạo Group :
+    - Bước 1: Trước tiên bạn cần đăng nhập vào Gitlab, sau đó chọn mục những groups của bạn, và tạo  1 group mới.
+        ![](https://i.imgur.com/4FfphJY.png)
+    - Bước 2 : Dẫn đường link đến project của bạn để nhóm tham gia, tên nhóm , ...
+        ![] (https://i.imgur.com/ZSP5yLp.png) <br>
+- Tạo Merge request :
+    - Bước 1 : Sau khi bạn đã làm 1 chức năng và push nó vào 1 nhánh mới vừa tạo. Chọn mục Merge Request để tạo 1 yêu cầu  merge request
+    - Bước 2 : Chọn nhánh sẽ merge với nhánh mới tạo của bạn (ví dụ : merge  nhánh bar vào nhánh master), project được mặc định là             project hiện tại đang truy cập.
+        ![](https://docs.gitlab.com/ee/gitlab-basics/img/merge_request_select_branch.png)
+    - Bước 3: khi đã sẵn sàng chọn nút continue , trang web sẽ chuyển tiếp thành tab điền nội dung message và gửi cho người leader (nhấn       nút submit) , nhằm thông báo cho người đó yêu cầu được merge nhánh , họ sẽ kiểm tra , nếu ổn thì sẽ chấp nhận yêu cầu , cấp phát         quyền merge nhánh, nếu có lỗi người leader đó sẽ yêu cầu kiểm tra lại.
+        ![](https://docs.gitlab.com/ee/gitlab-basics/img/merge_request_page.png) <br>
+- Phân quyền :
+   - Bước 1 : Chọn project muốn add thêm thành viên để phân quyền xem project của họ . sau đó nhấn impersonate.
+        ![](https://i.imgur.com/Tj5z97G.png)
+   - Bước 2 : add thêm những người vào để sử dụng project.  nhấn " Here " phân quyền xem cho họ.
+        ![](https://i.imgur.com/BmtityT.png)
+   -Bước 3 : phân quyền xem cho những thành viên vừa add .
+       Có 5 mức : Guest, Reporter, Master, Developer và Owner. 
+       ![](https://i.imgur.com/6KAozJm.png)
+       - Các mức được phép : <br>
+       | |Guest | Reporter |Developer | Master|Owner | <br>
+       |---|---|---|---|---|<br>
+       | Tạo một issue | * | * | * | * |* <br>
+       | Để lại ocmment | * | * | * | * |* <br>
+       | Pull code của dự án | | * | * | * |* <br>
+       | Tải dự án | | * | * | * |* <br>
+       | Tạo một code snippets | | * | * | * |* <br>
+       | Tạo một merge request | | | * | * |* <br>
+       | Push thay đổi vào một nhánh không được bảo vệ | | | * | * |* <br>
+       Xoá một nhánh không được bảo vệ | | | * | * |* <br>
+       | Thêm Tags | | | * | * |* <br>
+       | Viết Wiki| | | * | * |* <br>
+       | Quản lý issue tracker | | | * | * |* <br>
+       | Thêm một nhóm người dung mới | | | | * |* <br>
+       | Push thay đổi vào nhánh được bảo vệ | | | | * |* <br>
+       | Quản lý nhánh được bảo vệ | | | | * |* <br>
+       | Quản lý Git tags | | | | * |* <br>
+       |Sửa chữa dự án | | | | * |* <br>
+       |Thêm deploy key vào dự án | | | | * |* <br>
+       | Cấu hình dự án| | | | * |* <br>
+
