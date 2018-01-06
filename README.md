@@ -1,9 +1,4 @@
 ﻿# Report_HaoThu
-This is the report  our group
-<<<<<<< HEAD
-# Report_GroupHao_Thu
-This is the report  our group
-<<<<<<< HEAD
 # 1.Cách sử dụng .gitignore
 *.gitignore là gì ?*<br>
 -Tình huống là: Bạn làm việc theo nhóm, bạn muốn sử dụng git để quản lý mã nguồn.Tuy nhiên, dự án của bạn sẽ sinh ra những file build, gen, config, local, password, properties.Những file này thường là sẽ tự sinh và sẽ khác nhau tuỳ từng máy, khi đưa lên git thì khi người khác lấy về sẽ sinh ra xung đột (conflict) => gây cản trở cho công việc của bạn. Ngoài ra thì những file này thường rất nặng => tốn băng thông và tốn thời gian pull/push.Để giải quyết vấn đề này, git đưa ra **.gitignore** file.<br>
@@ -37,10 +32,10 @@ Bạn có thể vào https://github.com/github/gitignore để tham khảo một
  ![](https://i.imgur.com/RrHfII5.jpg)<br>
  -Tiếp theo chọn Add , đặt tên cho remote và lấy địa chỉ Responsitory mới trên GitHub về bằng cách copy link rồi chọn Ok <br>
  ![](https://i.imgur.com/XNRkIK8.jpg) 
-=======
- # I. Sơ đồ tổng quan về hệ thống GIT
+
+ # 1. Sơ đồ tổng quan về hệ thống GIT
  ![](https://i.imgur.com/aTq5pm7.png)
- # II. Cách tạo một Repository
+ # 2. Cách tạo một Repository
   ## A. cách tạo Repository
  Bước 1: Trước tiên bạn cần đăng nhập vào Github, sau đó nhấn dấu + trong menu , chọn New repository.
  ![](https://thachpham.com/wp-content/uploads/2015/04/github-create-repository.png)
@@ -82,7 +77,7 @@ Bạn có thể vào https://github.com/github/gitignore để tham khảo một
               | Hàng 3 | 3 x 1 | 3 x 2 | 3 x 3 | 3 x 4 |
               | Hàng 4 | 4 x 1 | 4 x 2 | 4 x 3 | 4 x 4 |
  
-# III.Các lệnh cơ bản của GIT
+# 3.Các lệnh cơ bản của GIT
  1. Khởi tạo Git trong một repository , vùng lưu trữ data có tên file .git , dưới dạng ẩn file.
     cú pháp : git init
     - Thêm các file vào vùng theo dõi :
@@ -100,7 +95,7 @@ Bạn có thể vào https://github.com/github/gitignore để tham khảo một
  6. Commit : git commit -m "nội dung commit"
  7. Để đổi tên commit messege, bạn sử dụng amend
   Cú pháp: git commit --amend "Nội dung commit mới" <br>
-# VI. Cách tạo merge request trên github
+# 4. Cách tạo merge request trên github
 Nhu cầu khi chúng ta đã phát triển xong  1 tính năng ví dụ bar và muốn ghép nó vào với master, lúc này ta sẽ push code mình lên bar branch trên server, sau đó thực hiện yêu cầu được ghép code vào nhánh chính: yêu cầu này chính là pull request.
 1. push code nhánh bar lên server :
   cú pháp : git push origin <tên nhánh (ví dụ : bar)>
@@ -109,5 +104,3 @@ Nhu cầu khi chúng ta đã phát triển xong  1 tính năng ví dụ bar và 
 Sau đó màn hình sẽ chuyển hướng sang khởi tạo yều cầu pull request này :
 ![](https://i.imgur.com/XCBYgZL.png)
 Điền thông tin cần thiết vào và bấm Create pull request lúc này, người chịu trách nhiệm cho dự án sẽ nhận được yêu cầu của bạn, người ta sẽ kiểm tra và cho phép ghép code vào. Lúc này, tính năng bar sẽ thuộc phần chính của dự án.
-    
->>>>>>> hao
