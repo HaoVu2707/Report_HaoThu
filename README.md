@@ -38,3 +38,22 @@ Bạn có thể vào https://github.com/github/gitignore để tham khảo một
 ![](https://i0.wp.com/appconus.com/blog/wp-content/uploads/2015/08/Screen-Shot-2015-08-07-at-2.36.55-PM.png)<br>
 Vẫn ở trên github, chuyển sang anhthu branch và bấm vào Compare & pull request bạn sẽ được điều hướng sang màn hình Open a pull request<br>
 ![](https://i1.wp.com/appconus.com/blog/wp-content/uploads/2015/08/Screen-Shot-2015-08-07-at-2.41.01-PM.png)<br>
+-Điền thông tin cần thiết vào và bấm Create pull request lúc này, người chịu trách nhiệm cho dự án sẽ nhận được yêu cầu của bạn, người ta sẽ kiểm tra và cho phép ghép code vào. Lúc này, tính năng bar sẽ thuộc phần chính của dự án
+# 5.Tạo group và phân quyền trong github:<br>
+-Để tạo một nhóm cho nhiều người cùng làm việc ta làm như sau:<br>
++Truy cập URL: https://github.com/settings/organizations, chọn New Organizations<br>
++Đặt tên và email cho tổ chức:
+![](https://camo.githubusercontent.com/dba455a769d2a5c16e65978fb6b67089c61f433f/687474703a2f2f692e696d6775722e636f6d2f497648656357652e706e67)<br><br>
+-Tại mục Choose the organization’s plan chọn Open Source để miễn phí, nhưng lúc này các Repo trong tổ chức sẽ là public.<br>
++Mời các thành viên cho tổ chức<br>
+![](https://camo.githubusercontent.com/938a1967fd1c18ac6b9eb7ff2efaeef8c59366e7/687474703a2f2f692e696d6775722e636f6d2f78563343756b632e706e67)<br><br>
++ Tạo một team mới <br>
+![](https://camo.githubusercontent.com/22088fab52bd8e29fe1a9ef5f6d7285d237fe6ee/687474703a2f2f692e696d6775722e636f6d2f376b574c4e59452e706e67)<br><br>
+![](https://camo.githubusercontent.com/daf9deade83a8e0aefcfba21fd00f187d4550c63/687474703a2f2f692e696d6775722e636f6d2f7a4f336b767a5a2e706e67)<br><br>
+Các member của team này có quyền write với các repo của team.
+Với 3 mức: Read Access, Write Access, Admin Access Github cho phép chúng ta phân quyền tới các thành viên của nhóm.
+Để mời một người dùng khác vào team, ta click vào team đó và search tên của người dùng cần tìm
+![](https://camo.githubusercontent.com/73070ffe87ce06e0ee497cbd9a8b48ce14aa05bc/687474703a2f2f692e696d6775722e636f6d2f557365703947502e706e67)<br><br>
+-Sau đó hệ thống sẽ yêu cầu bạn nhập password để xác thực, nếu thành công, một email xác nhận sẽ được gửi đến người được mời và người này sẽ xác nhận có tham gia vào tổ chức hay không.
+
+-Để tạo một repo cho tổ chức, ta chỉ cần click vào tổ chức đó, sau đó chọn Create new Repostory. Các hành động clone, add, commit,... làm như bình thường.
